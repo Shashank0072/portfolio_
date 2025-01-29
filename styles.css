@@ -3,14 +3,16 @@ body {
     line-height: 1.6;
     margin: 0;
     padding: 0;
-    background-color: #00000096;
+    background-color: #ddd6d6;
     overflow-x: hidden;
     width: 100%;
 }
 
 
 header {
-	background: #008483;
+    background: rgb(2, 0, 36);
+    background: linear-gradient(155deg, rgba(2, 0, 36, 1) 0%, rgba(9, 9, 121, 1) 32%, rgba(0, 249, 255, 1) 99%);
+	/* background: #008483; */
 	color: white;
 	padding: 10px;
 	text-align: center;
@@ -25,15 +27,41 @@ h1 {
 }
 
 h2 {
-    color: #008483	;
+    color: #001d9e;
 }
-
+ul {
+    list-style-type: none;
+}
+li::before {
+    content: "●  ";
+    color: #001d9e; 
+}
 section {
+    position: relative;
     padding: 20px;
     margin: 10px;
     background: white;
     border-radius: 5px;
     box-shadow: 0 0 10px rgb(255 255 255 / 61%);
+}
+
+section::after {
+    content: '';
+    position: absolute;
+    top: -10px;
+    left: -10px;
+    right: -10px;
+    bottom: -10px;
+    background: linear-gradient(155deg, rgba(9, 0, 36, 1) 0%, rgba(9, 9, 121, 1) 32%, rgba(0, 249, 255, 1) 99%);
+    z-index: -1;
+    opacity: 0;
+    border-radius: 5px; /* Ensure the shadow matches the border-radius */
+    transition: opacity 0.3s ease;
+    filter: blur(15px); /* Optional: adds a blur to the shadow effect */
+}
+
+section:hover::after {
+    opacity: 1; /* Show the gradient shadow effect on hover */
 }
 
 ul {
@@ -48,7 +76,9 @@ ul {
 footer {
     text-align: center;
     padding: 10px;
-    background: #008483;
+    background: rgb(2, 0, 36);
+    background: linear-gradient(155deg, rgba(2, 0, 36, 1) 0%, rgba(9, 9, 121, 1) 32%, rgba(0, 249, 255, 1) 99%);
+    /* background: #008483; */
     color: white;
     position: relative;
     bottom: 0;
@@ -60,7 +90,7 @@ a{
 color: white;
 font-weight: 600;
 }
-a:hover{color:#0903b9;
+a:hover{color:#00f6ff;
 }
 
 @media (max-width: 600px) {
